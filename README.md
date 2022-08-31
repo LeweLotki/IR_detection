@@ -7,6 +7,6 @@ Require modules can be found in Requirements.txt
 
 To run the training of the network write:
 
-$ git clone https://github.com/LeweLotki/IR_detection/tree/master.git __
-$ cd IR_detection __
+$ git clone https://github.com/LeweLotki/IR_detection/tree/master.git <br />
+$ cd IR_detection <br />
 $ python main.py
