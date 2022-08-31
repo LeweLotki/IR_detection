@@ -26,8 +26,8 @@ def prepering_data(infilename):
         cv2.imwrite(infilename, gray_im)
 
 paths = [
-    'dataset\\training_data',
-    'dataset\\test_data'
+    'data\\train',
+    'data\\test'
 ]
 dirname = os.path.dirname(__file__)
 for index, path in enumerate(paths):
