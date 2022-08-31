@@ -14,14 +14,21 @@ from data_loader import training_data, training_targets, testing_data, testing_t
 from data_prep import resolution
 
 os.system('cls')
-#os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
 tf.random.set_seed(
     seed=0
 )
 
-x_train = training_data
-y_train = training_targets.T
+print(np.shape(training_data))
+print(np.shape(training_targets))
+
+## Shuffle data
+idx = np.random.permutation(len(training_data))
+
+## Creating dataset with labels
+x_train = training_data[idx,:,:,:]
+y_train = training_targets[:,idx].T
 x_test = testing_data
 y_test = testing_tagrets.T
 
@@ -53,7 +60,7 @@ def cnn_model():
 
 model = cnn_model() 
 
-batch_size = 10
+batch_size = 20
 epochs = 50
 history = model.fit(x=x_train, y=y_train, batch_size=batch_size, epochs=epochs)
 

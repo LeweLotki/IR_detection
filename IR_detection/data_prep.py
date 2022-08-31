@@ -1,4 +1,4 @@
-import os, fnmatch, sys, cv2
+import os, fnmatch, cv2
 from pathlib import Path
 
 resolution = 512
