@@ -38,7 +38,7 @@ def cnn_model():
     model.add(Dense(128, activation='relu'))
     model.add(Dense(1, activation='sigmoid'))
     opt = keras.optimizers.Adam(learning_rate=1e-2)
-    model.compile(loss='CategoricalCrossentropy', optimizer=opt, metrics=['accuracy'])
+    model.compile(loss='BinaryCrossentropy', optimizer=opt, metrics=['accuracy'])
     model.summary()
     return model
 
