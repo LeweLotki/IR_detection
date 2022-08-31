@@ -5,6 +5,7 @@ import collections
 import pandas as pd
 collections.Callable = collections.abc.Callable
 import tensorflow as tf
+from tensorflow.python.keras.optimizers import adam_v2
 from tensorflow.python.keras.models import Sequential
 from tensorflow.python.keras.layers import Dense, Flatten
 from tensorflow.python.keras.layers.convolutional import Conv2D, MaxPooling2D
@@ -53,17 +54,17 @@ def cnn_model():
     model.add(Flatten())
     model.add(Dense(8, activation='relu'))
     model.add(Dense(8, activation='relu'))
-    model.add(Dense(8, activation='relu'))
     model.add(Dense(1, activation='sigmoid'))
 
-    model.compile(loss='BinaryCrossentropy', optimizer='Adam', metrics=['accuracy'])
+    opt = adam_v2.Adam(learning_rate=1e-3)
+    model.compile(loss='BinaryCrossentropy', optimizer=opt, metrics=['accuracy'])
     model.summary()
     return model
 
 model = cnn_model() 
 
 batch_size = 20
-epochs = 50
+epochs = 20
 try:
     history = model.fit(x=x_train, y=y_train, batch_size=batch_size, epochs=epochs)
 finally:
