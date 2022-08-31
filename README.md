@@ -13,7 +13,7 @@ $ python main.py
 
 Dataset example:
 
-![301287547_1143381839720157_4980938975901516024_n](https://user-images.githubusercontent.com/68538575/187742860-3886869d-9f2f-432a-a0c1-c9aff78afdde.png)
+![301287547_1143381839720157_4980938975901516024_n](https://user-images.githubusercontent.com/68538575/187743041-39f38000-e240-4412-807e-14c7fb81f22e.png)
 
 Network Architecture:
 
