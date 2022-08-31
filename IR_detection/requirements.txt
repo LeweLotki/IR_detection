@@ -1,0 +1,11 @@
+python3.x
+tensorflow2.x
+pandas
+matplotlib
+numpy1.23
+
+## pip
+
+pip install tensorflow
+pip install pandas
+pip install matplotlib
