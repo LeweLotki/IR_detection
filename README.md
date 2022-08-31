@@ -6,4 +6,6 @@ For training purpose FLIR ADAS dataset has been used, which can be found under t
 Require modules can be found in Requirements.txt
 
 To run the training of the network write:
-git clone
+
+$ git clone https://github.com/LeweLotki/IR_detection/tree/master.git
+$ cd IR_detection
