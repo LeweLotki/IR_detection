@@ -58,13 +58,13 @@ y_true = np.argmax(y_test, axis=1)
 pd.DataFrame(history.history).plot(figsize=(8,5))
 plt.show()
 
-confusion_mtx = confusion_matrix(y_true, y_class)
-fig, ax = plt.subplots(figsize=(15,10))
-ax = sns.heatmap(confusion_mtx, annot=True, fmt='d', ax=ax, cmap='Blues')
-ax.set_xlabel('Prediciton Label')
-ax.set_ylabel('True Label')
-ax.set_title('Confusion Matrix')
-plt.show()
+#confusion_mtx = confusion_matrix(y_true, y_class)
+#fig, ax = plt.subplots(figsize=(15,10))
+#ax = sns.heatmap(confusion_mtx, annot=True, fmt='d', ax=ax, cmap='Blues')
+#ax.set_xlabel('Prediciton Label')
+#ax.set_ylabel('True Label')
+#ax.set_title('Confusion Matrix')
+#plt.show()
 
 
 
