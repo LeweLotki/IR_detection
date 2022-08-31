@@ -1,4 +1,5 @@
 import os
+from turtle import clear
 import numpy as np
 import matplotlib.pyplot as plt
 import collections
@@ -13,15 +14,12 @@ from tensorflow.python.keras.regularizers import l1
 from data_loader import training_data, training_targets, testing_data, testing_tagrets
 from data_prep import resolution
 
-os.system('cls')
+os.system('clear')
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
 tf.random.set_seed(
     seed=0
 )
-
-print(np.shape(training_data))
-print(np.shape(training_targets))
 
 ## Shuffle data
 idx = np.random.permutation(len(training_data))
@@ -29,9 +27,6 @@ idx = np.random.permutation(len(training_data))
 ## Creating dataset with labels
 x_train = training_data[idx,:,:,:]
 y_train = training_targets[:,idx].T
-
-idx = np.random.permutation(len(testing_data))
-
 x_test = testing_data
 y_test = testing_tagrets.T
 
