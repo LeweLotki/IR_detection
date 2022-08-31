@@ -37,27 +37,33 @@ y_test = testing_tagrets[:,idx].T
 
 def cnn_model():
 
+    filters = 12
     kernel = (3,3)
+    l1_rate = 1e-3
+
     model=Sequential()
-    model.add(Conv2D(32,kernel, padding='same',input_shape=(1,resolution,resolution), activation='relu'))
+    model.add(Conv2D(filters,kernel, padding='same',input_shape=(1,resolution,resolution), 
+                     activation='relu', kernel_regularizer=tf.keras.regularizers.l1(l1_rate)))
     model.add(MaxPooling2D(pool_size=(2,2), padding='same'))
-    model.add(Conv2D(64,kernel, padding='same',input_shape=(1,resolution,resolution), activation='relu'))
+    model.add(Conv2D(filters,kernel, padding='same',input_shape=(1,resolution,resolution), 
+                     activation='relu', kernel_regularizer=tf.keras.regularizers.l1(l1_rate)))
     model.add(MaxPooling2D(pool_size=(2,2), padding='same'))
-    model.add(Conv2D(128,kernel, padding='same',input_shape=(1,resolution,resolution), activation='relu'))
+    model.add(Conv2D(filters,kernel, padding='same',input_shape=(1,resolution,resolution), 
+                     activation='relu', kernel_regularizer=tf.keras.regularizers.l1(l1_rate)))
     model.add(MaxPooling2D(pool_size=(2,2), padding='same'))
     model.add(Flatten())
     model.add(Dense(128, activation='relu'))
     model.add(Dense(64, activation='relu'))
     model.add(Dense(1, activation='sigmoid'))
 
-    #opt = adam_v2.Adam(
-    #        learning_rate=1e-2,
-    #        beta_1=0.9,
-    #        beta_2=0.999,
-    #        epsilon=1e-07,
-    #        amsgrad=False,
-    #        name='Adam'
-    #    )
+    opt = adam_v2.Adam(
+            learning_rate=1e-2,
+            beta_1=0.9,
+            beta_2=0.999,
+            epsilon=1e-07,
+            amsgrad=False,
+            name='Adam'
+        )
     model.compile(loss='BinaryCrossentropy', optimizer='Adam', metrics=['accuracy'])
     model.summary()
     return model
@@ -65,7 +71,7 @@ def cnn_model():
 model = cnn_model() 
 
 batch_size = 20
-epochs = 50
+epochs = 100
 try:
     history = model.fit(x=x_train, y=y_train, batch_size=batch_size, epochs=epochs)
 finally:
