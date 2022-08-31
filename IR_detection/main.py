@@ -18,6 +18,10 @@ import seaborn as sns
 os.system('cls')
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
+tf.random.set_seed(
+    seed=0
+)
+
 x_train = training_data
 y_train = training_targets.T
 x_test = testing_data
