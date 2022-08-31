@@ -21,7 +21,7 @@ def prepering_data(infilename):
         print(filename)
         im = cv2.imread(infilename)
         gray_im = cv2.cvtColor(im, cv2.COLOR_BGR2GRAY)
-        #gray_im = cv2.resize(gray_im, (80, 80))
+        gray_im = cv2.resize(gray_im, (128, 128))
         #gray_im = cv2.bilateralFilter(gray_im,9,20,20)
         cv2.imwrite(infilename, gray_im)
 

@@ -22,7 +22,7 @@ def get_data(path):
             im = cv2.imread(infilename, 0)
             data_set.append(im)
             target_set.append(target)
-    #data_set = np.reshape(data_set, (data_size, 1, 80, 80)).astype('float32')
+    data_set = np.reshape(data_set, (data_size, 1, 128, 128)).astype('float32')
     target_set = np.reshape(target_set, (data_size, 1))
     target_set = target_set.T
     
