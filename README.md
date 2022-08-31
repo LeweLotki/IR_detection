@@ -13,4 +13,5 @@ $ python main.py
 
 Network Architecture:
 
-![pobrane](https://user-images.githubusercontent.com/68538575/187742002-3d1b3aa9-551b-42c4-a8a5-2138219d09ea.png)
+![pobrane2](https://user-images.githubusercontent.com/68538575/187742739-1fe624c8-cbfc-4877-91e0-0b04d6eac81c.png)
+
