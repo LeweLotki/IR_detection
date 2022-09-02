@@ -1,4 +1,4 @@
-# IR_detection
+# Detection of humans with InfraRed Camera and Deep Convolutional Neural Networks
 
 This repository was created to build binary classificator, which will be able to detect humans with IR camera.
 For training purpose FLIR ADAS dataset has been used, which can be found under this link https://adas-dataset-v2.flirconservator.com/#downloadguide.
